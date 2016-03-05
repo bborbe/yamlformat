@@ -1,5 +1,9 @@
 # YamlFormat
 
+## Install
+
+`go get github.com/bborbe/yamlformat/bin/yamlformat` 
+
 ## Continuous integration
 
 [Jenkins](https://www.benjamin-borbe.de/jenkins/job/Go-YamlFormat/)
