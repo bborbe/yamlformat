@@ -42,34 +42,42 @@ func main() {
 
 func do(writer io.Writer, path string, write bool) error {
 	var err error
+	logger.Debugf("format %s and write %v", path, write)
 	if len(path) == 0 {
 		fmt.Fprintf(writer, "parameter %s missing\n", PARAMETER_PATH)
 		return nil
 	}
 	if path, err = io_util.NormalizePath(path); err != nil {
+		logger.Warnf("normalize path: %s failed: %v", path, err)
 		return err
 	}
 	source, err := ioutil.ReadFile(path)
 	if err != nil {
+		logger.Warnf("read file %s failed: %v", path, err)
 		return err
 	}
 	var data interface{}
 	err = yaml.Unmarshal(source, &data)
 	if err != nil {
+		logger.Warnf("unmarshal %s failed: %v", path, err)
 		return err
 	}
 	content, err := yaml.Marshal(data)
 	if err != nil {
+		logger.Warnf("marshal failed: %v", err)
 		return err
 	}
 	if write {
+		logger.Debug("write file")
 		fileInfo, err := readMode(path)
 		if err != nil {
+			logger.Warnf("get fileinfo failed: %v", err)
 			return err
 		}
 		logger.Debugf("write yaml %s", path)
 		return ioutil.WriteFile(path, content, fileInfo.Mode())
 	} else {
+		logger.Debugf("print content")
 		fmt.Fprintf(writer, "%s\n", string(content))
 		return nil
 	}
