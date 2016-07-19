@@ -10,9 +10,8 @@ import (
 	io_util "github.com/bborbe/io/util"
 	"github.com/bborbe/log"
 	"gopkg.in/yaml.v2"
+	"runtime"
 )
-
-var logger = log.DefaultLogger
 
 const (
 	PARAMETER_LOGLEVEL = "loglevel"
@@ -20,14 +19,21 @@ const (
 	PARAMETER_WRITE    = "write"
 )
 
+var (
+	logger      = log.DefaultLogger
+	logLevelPtr = flag.String(PARAMETER_LOGLEVEL, log.LogLevelToString(log.ERROR), log.FLAG_USAGE)
+	pathPtr     = flag.String(PARAMETER_PATH, "", "path")
+	writePtr    = flag.Bool(PARAMETER_WRITE, false, "write")
+)
+
 func main() {
 	defer logger.Close()
-	logLevelPtr := flag.String(PARAMETER_LOGLEVEL, log.LogLevelToString(log.ERROR), log.FLAG_USAGE)
-	pathPtr := flag.String(PARAMETER_PATH, "", "path")
-	writePtr := flag.Bool(PARAMETER_WRITE, false, "write")
 	flag.Parse()
+
 	logger.SetLevelThreshold(log.LogStringToLevel(*logLevelPtr))
 	logger.Debugf("set log level to %s", *logLevelPtr)
+
+	runtime.GOMAXPROCS(runtime.NumCPU())
 
 	writer := os.Stdout
 
