@@ -7,10 +7,11 @@ import (
 	"io/ioutil"
 	"os"
 
+	"runtime"
+
 	io_util "github.com/bborbe/io/util"
 	"github.com/bborbe/log"
 	"gopkg.in/yaml.v2"
-	"runtime"
 )
 
 const (
