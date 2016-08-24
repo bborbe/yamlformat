@@ -1,0 +1,15 @@
+hash: 668e6c6ec052638ba55ff83bf86efc6f05d2537cc807dbb2eed69edaca68119c
+updated: 2016-08-24T22:53:53.147065803+02:00
+imports:
+- name: github.com/bborbe/io
+  version: 56d91e8345e4418981a56bc4b8466b4096138f08
+  subpackages:
+  - util
+  - buffered_writer
+- name: github.com/bborbe/log
+  version: 0250bb5b2e2bd833cb9a47333c28aa46751cdbfe
+- name: gopkg.in/yaml.v2
+  version: e4d366fc3c7938e2958e662b4258c7a89e1f0e3e
+testImports:
+- name: github.com/bborbe/assert
+  version: cd6d0ec67c40ced8ca6cf72773b9e4b44420fbd2
