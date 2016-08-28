@@ -1,0 +1,14 @@
+hash: 0d6747f8f68b7e2853c24d13e9ea973e435bdb26bca122c0221017b5770d1f1d
+updated: 2016-08-29T00:13:48.890270857+02:00
+imports:
+- name: github.com/bborbe/io
+  version: 5891c542e99ec05e63ac475bc8a2202b2fca02aa
+  subpackages:
+  - util
+- name: github.com/golang/glog
+  version: 23def4e6c14b4da8ac2ed8007337bc5eb5007998
+- name: gopkg.in/yaml.v2
+  version: e4d366fc3c7938e2958e662b4258c7a89e1f0e3e
+testImports:
+- name: github.com/bborbe/assert
+  version: 639eac9a24e3c01472758f3c79452b8517bc29f6
