@@ -3,7 +3,7 @@ import:
 - package: github.com/bborbe/io
   subpackages:
   - util
-- package: github.com/bborbe/log
+- package: github.com/golang/glog
 - package: gopkg.in/yaml.v2
 testImport:
 - package: github.com/bborbe/assert
