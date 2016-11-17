@@ -15,12 +15,12 @@ import (
 )
 
 const (
-	PARAMETER_PATH  = "path"
+	PARAMETER_PATH = "path"
 	PARAMETER_WRITE = "write"
 )
 
 var (
-	pathPtr  = flag.String(PARAMETER_PATH, "", "path")
+	pathPtr = flag.String(PARAMETER_PATH, "", "path")
 	writePtr = flag.Bool(PARAMETER_WRITE, false, "write")
 )
 
@@ -34,9 +34,9 @@ func main() {
 
 	err := do(writer, *pathPtr, *writePtr)
 	if err != nil {
-		glog.Exit(err)
+		glog.Exitf("format %v failed: %v", *pathPtr, err)
 	}
-	glog.V(2).Info("done")
+	glog.V(2).Infof("format %v success", *pathPtr)
 }
 
 func do(writer io.Writer, path string, write bool) error {
