@@ -15,13 +15,13 @@ import (
 )
 
 const (
-	PARAMETER_PATH = "path"
-	PARAMETER_WRITE = "write"
+	parameterPath  = "path"
+	parameterWrite = "write"
 )
 
 var (
-	pathPtr = flag.String(PARAMETER_PATH, "", "path")
-	writePtr = flag.Bool(PARAMETER_WRITE, false, "write")
+	pathPtr  = flag.String(parameterPath, "", "path")
+	writePtr = flag.Bool(parameterWrite, false, "write")
 )
 
 func main() {
@@ -43,7 +43,7 @@ func do(writer io.Writer, path string, write bool) error {
 	var err error
 	glog.V(2).Infof("format %s and write %v", path, write)
 	if len(path) == 0 {
-		fmt.Fprintf(writer, "parameter %s missing\n", PARAMETER_PATH)
+		fmt.Fprintf(writer, "parameter %s missing\n", parameterPath)
 		return nil
 	}
 	if path, err = io_util.NormalizePath(path); err != nil {
