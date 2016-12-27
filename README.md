@@ -6,7 +6,7 @@
 
 ## Continuous integration
 
-[Jenkins](https://www.benjamin-borbe.de/jenkins/job/Go-YamlFormat/)
+[Jenkins](https://jenkins.benjamin-borbe.de/job/Go-YamlFormat/)
 
 ## Copyright and license
 
