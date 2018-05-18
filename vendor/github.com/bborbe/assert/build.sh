@@ -1,6 +1,6 @@
 #!/bin/sh
 
-SOURCEDIRECTORY="github.com/bborbe/yamlformat"
+SOURCEDIRECTORY="github.com/bborbe/assert"
 
 ################################################################################
 
