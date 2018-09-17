@@ -1,7 +1,7 @@
 default: test install
 
 install:
-	GOBIN=$(GOPATH)/bin GO15VENDOREXPERIMENT=1 go install *.go
+	GOBIN=$(GOPATH)/bin GO15VENDOREXPERIMENT=1 go install github.com/bborbe/yamlformat
 
 test:
 	GO15VENDOREXPERIMENT=1 go test -cover ./...

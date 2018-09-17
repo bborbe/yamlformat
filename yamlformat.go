@@ -1,4 +1,4 @@
-package yamlformat
+package main
 
 import (
 	"flag"
